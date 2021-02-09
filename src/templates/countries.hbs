@@ -1,0 +1,23 @@
+{{#each this}}
+     <li class="countries__item">
+            <h2 class="countries__name">{{name}}</h2>
+            <h3 class="countries__capital"><span>Capital: </span>{{capital}}</h3>
+            <img src={{flag}} alt="Flag of the country" width="220px">
+            <p class="countries__subregions">Subregion: <span>{{subregion}}</span></p>
+            <div class="lang-wrapper">
+                <span class="countries__languages-title">Languages:</span>
+                <ul class="countries__languages">
+                    {{#each languages}}
+                    <li>{{name}}</li> 
+                    {{/each}}
+                </ul>
+            </div>
+            <span class="countries__currencies">Currencies: 
+                <span>
+                    {{#each currencies}}
+                    {{symbol}} "{{name}}"
+                    {{/each}}
+                </span>
+            </span>
+        </li>
+{{/each}}
