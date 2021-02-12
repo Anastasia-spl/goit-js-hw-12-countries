@@ -1,4 +1,4 @@
-const _ = require('lodash');
+import debounce from "lodash.debounce";
 
 import notifyError from './error-notification.js'
 import { fetchBasics } from './fetch-countries-basics.js'
@@ -6,7 +6,7 @@ import refs from './refs.js';
 import updateCountriesMarkup from './update-markup.js'
 //===================================================================================
 
-refs.inputRef.addEventListener('input', _.debounce((onSearchCountriesInput), 500));
+refs.inputRef.addEventListener('input', debounce((onSearchCountriesInput), 500));
 
 function onSearchCountriesInput(event) {
    fetchBasics.query = event.target.value;
